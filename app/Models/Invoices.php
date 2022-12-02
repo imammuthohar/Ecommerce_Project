@@ -24,4 +24,22 @@ class Invoices extends Model
         'grand_total',
         'snap_token',
     ];
+
+    public function city()
+    {       
+        return $this->belongsTo(Cities::class);
+    }
+
+    public function province ()
+    {
+        return $this->belongsTo(Provinces::class);
+    }
+
+    public function customer()
+    {
+        return $this->belongsTo(Customers::class);
+    }
+
+
+
 }

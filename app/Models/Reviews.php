@@ -15,4 +15,19 @@ class Reviews extends Model
     'order_id',
     'customer_id',
     ];
+
+    public function product()
+    {       
+        return $this->belongsTo(Products::class);
+    }
+
+    public function order()
+    {       
+        return $this->belongsTo(Orders::class);
+    }
+
+    public function customer()
+    {       
+        return $this->belongsTo(Customers::class);
+    }
 }

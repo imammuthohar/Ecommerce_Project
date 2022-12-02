@@ -16,20 +16,29 @@ return new class extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
             $table->string('invoice');
-            $table->integer('customer_id');
+            $table->unsignedBigInteger('customer_id');
             $table->string('courier');
             $table->string('courier_service');
-            $table->integer('courier_cost');
+            $table->bigInteger('courier_cost');
             $table->integer('weight');
             $table->string('name');
-            $table->integer('phone');
-            $table->integer('city_id');
-            $table->integer('province_id');
+            $table->string('phone');
+            $table->unsignedBigInteger('city_id');
+            $table->unsignedBigInteger('province_id');
             $table->text('address');
-            $table->string('status');
-            $table->integer('grand_total');
-            $table->string('snap_token');
+            $table->enum('status', array('pending', 'success', 'expired', 'failed'));
+            $table->bigInteger('grand_total');
+            $table->string('snap_token')->nullable();
             $table->timestamps();
+            
+            //relationship customer
+            $table->foreign('customer_id')->references('id')->on('customers');
+
+            //relationship city
+            $table->foreign('city_id')->references('id')->on('cities');
+
+            //relationship province
+            $table->foreign('province_id')->references('id')->on('provinces');
         });
     }
 

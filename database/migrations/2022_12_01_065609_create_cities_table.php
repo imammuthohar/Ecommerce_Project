@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->id();
-            $table->integer('province_id');
+            $table->unsignedBigInteger('province_id');
             $table->integer('city_id');
             $table->string('name');
             $table->timestamps();
+        //relationship province
+        $table->foreign('province_id')->references('id')->on('provinces');
         });
     }
 

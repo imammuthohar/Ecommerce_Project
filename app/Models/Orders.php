@@ -14,4 +14,13 @@ class Orders extends Model
         'qty',    
         'price',
     ];
+
+    public function invoice()
+    {       
+        return $this->belongsTo(Invoices::class);
+    }
+    public function product()
+    {       
+        return $this->belongsTo(Products::class);
+    }
 }

@@ -14,4 +14,10 @@ class Cities extends Model
     'name',
      
     ];
+
+
+    public function province()
+    {       
+        return $this->belongsTo(Provinces::class);
+    }
 }

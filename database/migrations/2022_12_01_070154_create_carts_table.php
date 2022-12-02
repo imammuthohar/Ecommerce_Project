@@ -15,12 +15,17 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->integer('product_id');
-            $table->integer('customer_id');
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('customer_id');
             $table->integer('qty');
             $table->integer('price');
             $table->integer('weight');
             $table->timestamps();
+             //relationship product
+             $table->foreign('product_id')->references('id')->on('products');
+
+             //relationship customer
+             $table->foreign('customer_id')->references('id')->on('customers');
         });
     }
 

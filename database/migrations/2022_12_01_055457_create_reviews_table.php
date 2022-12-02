@@ -15,13 +15,23 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->string('rating');
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('customer_id');
+            $table->integer('rating');
             $table->text('review');
-            $table->integer('product_id');
-            $table->integer('order_id');
-            $table->integer('customer_id');
             $table->timestamps();
+
+            //relationship product
+            $table->foreign('product_id')->references('id')->on('products');
+
+            //relationship order
+            $table->foreign('order_id')->references('id')->on('orders');
+            
+            //relationship customer
+            $table->foreign('customer_id')->references('id')->on('customers');
         });
+
     }
 
     /**

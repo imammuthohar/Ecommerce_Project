@@ -16,4 +16,13 @@ class Carts extends Model
         'weight',
   
     ];
+
+    public function product()
+    {       
+        return $this->belongsTo(Products::class);
+    }
+    public function customer()
+    {       
+        return $this->belongsTo(Customers::class);
+    }
 }
