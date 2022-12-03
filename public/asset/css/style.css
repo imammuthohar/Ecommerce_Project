@@ -1,0 +1,24 @@
+.container img {
+    justify-content: center;
+    width: 20%;
+    display: inline-block;
+    align-content: center;
+    background-size: cover;
+    margin-left: 37%;
+    margin-bottom: 2px;
+}
+
+.tombol {
+    border: 1px solid;
+    background-color: orangered;
+    border-radius: 5px;
+    color: white;
+    width: 400px;
+    display: inline-block;
+    justify-content: center;
+    margin-left: -130px;
+}
+
+.card {
+    border-top: 1 red;
+}
