@@ -22,3 +22,9 @@
 .card {
     border-top: 1 red;
 }
+
+.grafik {
+    margin-left: -100px;
+    background-color: azure;
+    margin-top: 50px;
+}
