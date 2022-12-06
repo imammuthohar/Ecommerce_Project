@@ -23,6 +23,12 @@ class Invoices extends Model
         'status',
         'grand_total',
         'snap_token',
+
+
+
+       	
+
+
     ];
 
     public function city()
