@@ -24,4 +24,4 @@ class UserSeeder extends Seeder
     }
 }
 
-// query builder eloquent namatable:
+

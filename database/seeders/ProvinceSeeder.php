@@ -37,5 +37,5 @@ class ProvinceSeeder extends Seeder
 }
 
 
-// batss
+
 

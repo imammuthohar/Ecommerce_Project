@@ -40,5 +40,4 @@ class CitySeeder extends Seeder
 }
 
 
-// batas
 
