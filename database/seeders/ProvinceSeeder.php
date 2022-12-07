@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\Provinces;
+use App\Models\Province;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Http;
 
@@ -20,7 +20,7 @@ class ProvinceSeeder extends Seeder
         //Fetch Rest API
         $response = Http::withHeaders([
             //api key rajaongkir
-            'key' => config('services.rajaongkir.key'),
+            'key' => '2a602e1a8d1c6e02f8fbd0484430cbf3',
         ])->get('https://api.rajaongkir.com/starter/province');
         
         //loop data from Rest API
