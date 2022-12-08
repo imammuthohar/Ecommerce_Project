@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Invoices;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
+// use App\Model\Invoices;
 class DashboardController extends Controller
 {
     /**
@@ -23,7 +26,17 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $invoice = Invoices::latest()->paginate(5);
+      
+        $pending = Invoices::where('status','pending')->count();
+        $success = Invoices::where('status','success')->count();
+        $expired = Invoices::where('status','expired')->count();
+        $failed = Invoices::where('status','failed')->count();
+
+
+        return view('admin.index',compact('invoice','pending','success','expired','failed'));
+
+       
         
     }
 }

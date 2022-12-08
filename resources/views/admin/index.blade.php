@@ -13,7 +13,12 @@
 
             <div class="info-box-content">
               <span class="info-box-text">PANDING</span>
-              <span class="info-box-number">0</span>
+              <span class="info-box-number">
+          
+                {{ $pending }}
+              </span>
+
+             
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -31,7 +36,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">SUCCESS</span>
-              <span class="info-box-number">0</span>
+              <span class="info-box-number"> {{ $success }}  </span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -48,7 +53,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">EXPIRED</span>
-              <span class="info-box-number">0</span>
+              <span class="info-box-number"> {{ $expired }}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -61,7 +66,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">FAILED</span>
-              <span class="info-box-number">0</span>
+              <span class="info-box-number"> {{ $failed }}</span>
             </div>
             <!-- /.info-box-content -->
           </div>
