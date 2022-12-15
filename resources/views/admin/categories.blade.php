@@ -36,14 +36,20 @@ Categories page
                
               </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->
+            <form action="" method="GET" role="search">  
             <div class="col-lg-6">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Cari berdasarkan kategori">
+                <input name="search" type="text" class="form-control" placeholder="Cari berdasarkan kategori">
                 <span class="input-group-btn">
-                <form action="">  
-                  <button class="btn btn-warning" name="cari" type="button"> <i class="fa fa-search"> </i> Search</button>
+               
+                  
+                  <button class="btn btn-warning" type="submit"> <i class="fa fa-search"> </i> Search</button>
                 </form>
                 </span>
+
+              
+
+
               </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->
           </div><!-- /.row -->
