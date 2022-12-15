@@ -1,5 +1,13 @@
 
 @extends('layout.mainadmin')
+
+@section('titlepage')
+Dashboard
+@endsection
+
+@section('subtitlepage')
+Dashboard page
+@endsection
 @section('konten')
     <!-- Main content -->
     <section class="content">
@@ -92,12 +100,85 @@
             </div>
           </div>
           <div class="box-body">
-            <div class="chart">
-              <canvas id="lineChart" style="height:250px"></canvas>
+
+            {{-- <div class="chart">
+              <canvas id="linechart" style="height:250px"></canvas>
+            </div> --}}
+
+            <div class="panel">
+              <div id="grafik">
+
+              </div>
             </div>
           </div>
           <!-- /.box-body -->
         </div>
         <!-- /.box -->
       </div>
+      
+      
+      
       @endsection
+      
+      @section('footer')
+
+      <script src="https://code.highcharts.com/highcharts.js"></script>
+      <script>
+        Highcharts.chart('grafik', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'STATISTIK PENDAPATAN 2022'
+    },
+    subtitle: {
+        text: 'Aza-Store.com'
+    },
+    xAxis: {
+        categories: [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Rupiah (Rp)'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Indonesia',
+        data: [10000,20000,30000,40000,50000,20000,
+                70000,30000,10000,43000,20000,23000
+      
+      ]
+
+    }]
+});
+      </script>
+      @stop

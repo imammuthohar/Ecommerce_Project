@@ -29,3 +29,6 @@ Route::prefix('admin')->group(function () {
 Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
+// Route::get('/admin/categories', [App\Http\Controllers\CategoriesController::class, 'index'])->name('home');
+// Route::resource('/admin/categories', [App\Http\Controllers\CategoriesController::class,'index'])->name('home');
+Route::resource('/admin/categories', \App\Http\Controllers\CategoriesController::class);
