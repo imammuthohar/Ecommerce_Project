@@ -63,13 +63,7 @@ Edit new Categories page
                 <label for="formFile" class="form-label">GAMBAR</label>
                 <input name="image" class="form-control" type="file" id="formFile">
 
-                <!-- error message untuk title -->
-                @error('image')
-                <div class="alert alert-danger mt-2">
-                    {{ $message }}
-                </div>
-            @enderror
-              </div>
+            </div>
 
 
               

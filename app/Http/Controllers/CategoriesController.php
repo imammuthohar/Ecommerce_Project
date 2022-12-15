@@ -47,8 +47,8 @@ class CategoriesController extends Controller
        $image = $request->file('image');
        $image->storeAs('public/img', $image->hashName());
 
-       //create post
-       Categories::create([
+       //create data kategori
+       Category::create([
            'name'      => $request->name,
            'slug'      => $request->slug,
            'image'     => $image->hashName()
@@ -61,13 +61,13 @@ class CategoriesController extends Controller
    
    public function destroy(Category $category)
    {
-    // dd($category);
+    
 
 
         //delete image
         Storage::delete('public/img/'. $category->image);
 
-        //delete post
+        //delete data kategori
         $category->delete();
 
        return redirect()->route('categories.index')->with(['success' => 'Data Berhasil Dihapus!']);
@@ -76,6 +76,47 @@ class CategoriesController extends Controller
 
    public function edit (Category $category) {
     return view('admin.editcategory',compact('category'));
+   }
+
+   public function update(Request $request,Category $category) {
+  
+     //proses validasi formulir
+     $this->validate($request, [
+        'name'  => 'required|min:2',
+        'slug'  => 'required|min:2',
+        'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+    ]);
+
+    // dd($request);
+    
+
+    //check if image is uploaded
+    if ($request->hasFile('image')) {
+
+        //upload new image
+        $image = $request->file('image');
+        $image->storeAs('public/img', $image->hashName());
+
+        //delete old image
+        Storage::delete('public/img/'.$category->image);
+
+        //update kategory with new image
+        $category->update([
+            'name'      => $request->name,
+           'slug'      => $request->slug,
+           'image'     => $image->hashName()
+        ]);
+      
+    } else {
+      
+        //update kategory without image
+        $category->update([
+        'name'      => $request->name,
+        'slug'      => $request->slug
+        ]);
+    }
+
+        return redirect()->route('categories.index')->with(['success' => 'Data Berhasil di Update!']);
    }
    
    
