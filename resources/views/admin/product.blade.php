@@ -70,9 +70,11 @@ Product page
               <tr>
                 
 
-                  <td>{{ $prod->title }}</td>
-                  <td>{{ $prod->title }}</td>
+                  <td> {{ $prod->title }} </td>
+                  {{-- <td>{{ $prod->categories->name }}</td> --}}
+                  <td>  {{ $prod->category_id }} </td>
                   <td>{{ $prod->stock }}</td>
+                  
                   
                   <td class="text-center">
                       <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('product.destroy', $prod->id) }}" method="POST">

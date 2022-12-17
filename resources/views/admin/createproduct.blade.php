@@ -75,7 +75,6 @@ Add new Product page
               <option value="{{ $kategory->id }}"> {{ $kategory->name }} </option>
               @endforeach
             </select>
-            
           </div>  
           
         
