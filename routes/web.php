@@ -32,3 +32,4 @@ Route::get('/admin/dashboard', [App\Http\Controllers\DashboardController::class,
 // Route::get('/admin/categories', [App\Http\Controllers\CategoriesController::class, 'index'])->name('home');
 // Route::resource('/admin/categories', [App\Http\Controllers\CategoriesController::class,'index'])->name('home');
 Route::resource('/admin/categories', \App\Http\Controllers\CategoriesController::class);
+Route::resource('/admin/product',\App\Http\Controllers\ProductController::class);

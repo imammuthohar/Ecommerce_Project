@@ -45,9 +45,9 @@ class CategoriesController extends Controller
    {
        //validate form
        $this->validate($request, [
-           'name'     => 'required|min:2',
+           'name'    => 'required|min:2',
            'slug'   => 'required|min:2',
-           'image'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+           'image'   => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
 
 
        ]);
