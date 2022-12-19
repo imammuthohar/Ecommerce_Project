@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-// use App\Models\Categories;
+
 use App\Models\Category;
 
 use Illuminate\Http\Request;
@@ -70,15 +70,11 @@ class CategoriesController extends Controller
    
    public function destroy(Category $category)
    {
-    
-
-
         //delete image
         Storage::delete('public/img/'. $category->image);
 
         //delete data kategori
         $category->delete();
-
        return redirect()->route('categories.index')->with(['success' => 'Data Berhasil Dihapus!']);
    }
 

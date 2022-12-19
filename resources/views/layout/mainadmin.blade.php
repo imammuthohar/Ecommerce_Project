@@ -187,9 +187,21 @@ desired effect
         <li class="header">MASTER DATA</li>
         <!-- Optionally, you can add icons to the links -->
         {{-- <li class="active"> <a href="#"><i class="fa fa-folder"></i> <span>Categories</span></a></li> --}}
-        <li><a href="/admin/categories"><i class="fa fa-folder"></i> <span>Categories</span></a></li>
-        <li><a href="/admin/product"><i class="fa fa-list"></i> <span>Product</span></a></li>
-        
+        <li><a href="/admin/categories"><i class="fa fa-bars"></i> <span>Categories</span></a></li>
+        <li><a href="/admin/product"><i class="fa fa-list"></i> <span>Product</span></a></li> 
+      </ul>
+
+
+      
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">OTHERS</li>
+        <!-- Optionally, you can add icons to the links -->
+        {{-- <li class="active"> <a href="#"><i class="fa fa-folder"></i> <span>Categories</span></a></li> --}}
+        <li><a href="/admin/slider"><i class="fa fa-sliders"></i> <span>Sliders</span></a></li>
+        <li><a href="/admin/customer"><i class="fa fa-users"></i> <span>Customers</span></a></li> 
+        <li><a href="/admin/user"><i class="fa fa-user"></i> <span>Users</span></a></li> 
+
+        <i class="fa-solid fa-people-simple"></i>
       </ul>
 
 
