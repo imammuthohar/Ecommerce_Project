@@ -26,23 +26,15 @@ Customer Page
         <div class="box-body">
 
          {{-- isi --}}
-         <div class="row mb-20">
+          <div class="row mb-20">
             <div class="col-lg-6">
-              <div class="input-group">
-                <span class="input-group-btn">
-                  
-                  <a href=" #" class="tombol btn btn-warning"> <i class="fa fa-plus"> </i> Add New</a>
-                </span>
-               
-              </div><!-- /input-group -->
+              
             </div><!-- /.col-lg-6 -->
             <form action="" method="GET" role="search">  
             <div class="col-lg-6">
               <div class="input-group">
-                <input name="search" type="text" class="form-control" placeholder="Cari Slider">
-                <span class="input-group-btn">
-               
-                  
+                <input name="search" type="text" class="form-control" placeholder="Cari Customer">
+                <span class="input-group-btn">                 
                   <button class="btn btn-warning" type="submit"> <i class="fa fa-search"> </i> Search</button>
                 </form>
                 </span>
@@ -61,7 +53,7 @@ Customer Page
                 <th>Customer Name</th>
                 <th>Email Address</th>
                 <th>Joined</th>
-                <th>Action</th>
+          
         
             </tr>
           </thead>
@@ -77,15 +69,7 @@ Customer Page
                  
 
                   
-                  
-                  <td class="text-center">
-                      <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('customer.destroy',$cs->id) }} " method="POST">
-                          <a href="{{ route('customer.edit',$cs->id) }}" class="btn btn-sm btn-primary">EDIT</a>
-                          @csrf
-                          @method('DELETE')
-                          <button type="submit" class="btn btn-sm btn-danger">HAPUS</button> 
-                      </form>
-                  </td>
+               
               </tr>
             @empty
                 <div class="alert alert-danger">

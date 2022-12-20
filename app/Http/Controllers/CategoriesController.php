@@ -21,7 +21,7 @@ class CategoriesController extends Controller
 
    public function index() 
    {
-// dd($request);
+
     $katakunci=request('search');
         if($katakunci){
          $category = Category::where( 'name', 'LIKE', '%' . $katakunci . '%' )->paginate(3);
@@ -29,8 +29,7 @@ class CategoriesController extends Controller
                 $category = Category::latest()->paginate(3);
               } 
 
-
-    // $category = Category::latest()->paginate(3);
+ 
     
     return view('admin.categories',compact('category'));
 
