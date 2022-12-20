@@ -58,29 +58,26 @@ Customer Page
           <table class="table table-bordered">   
             <thead>
             <tr>
-                <th>Customer Name</th>
-                <th>Email Address</th>
-                <th>Joined</th>
+                <th>Image</th>
+                <th>Link Slider</th>
                 <th>Action</th>
         
             </tr>
           </thead>
             <tbody>
-              @forelse ($customer as $cs)
+              @forelse ($slider as $slid)
               <tr>
                 
 
-                  <td> {{ $cs->name }}</td>
+                  <td> a </td>
                   {{-- <td>{{ $prod->categories->name }}</td> --}}
-                  <td> {{ $cs->email }}</td>
-                  <td> {{ $cs->created_at }}</td>
-                 
-
+                  <td> a</td>
+               
                   
                   
                   <td class="text-center">
-                      <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('customer.destroy',$cs->id) }} " method="POST">
-                          <a href="{{ route('customer.edit',$cs->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                      <form onsubmit="return confirm('Apakah Anda Yakin ?');" action=" " method="POST">
+                          <a href="" class="btn btn-sm btn-primary">EDIT</a>
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="btn btn-sm btn-danger">HAPUS</button> 
