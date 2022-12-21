@@ -6,7 +6,7 @@ use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
-
+use Validator;
 
 class SliderController extends Controller
 {
@@ -14,7 +14,7 @@ class SliderController extends Controller
     public function __construct()
             {
                 $this->middleware('auth');
-            }
+         }
             
 
 
@@ -32,10 +32,10 @@ class SliderController extends Controller
         public function store(Request $request)
         {
             //validate form
-            // $this->validate($request, [
-            //     'image'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            //     'link'      => 'required|min:5'   
-            // ]);
+            $this->validate($request, [
+                'image'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'link'      => 'required|min:5'   
+            ]);
     
             //upload image
             $image = $request->file('image');
@@ -68,14 +68,11 @@ class SliderController extends Controller
 
 public function update(Request $request, Slider $slider) {
                             // /proses validasi formulir
-                    // $this->validate($request, [
+                    $this->validate($request, [
                         
-                    //     'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                    //     'link'  => 'required|min:2'
-                    // ]);
-
-                
-                    
+                        'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                        'link'  => 'required|min:2'
+                    ]);                  
 
                     //check if image is uploaded
                     if ($request->hasFile('image')) {

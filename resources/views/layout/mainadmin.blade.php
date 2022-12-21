@@ -191,6 +191,11 @@ desired effect
         <li><a href="/admin/product"><i class="fa fa-list"></i> <span>Product</span></a></li> 
       </ul>
 
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">ORDERS</li>
+        
+        <li><a href="/admin/invoices"><i class="fa fa-shopping-cart"></i> <span>Invoices</span></a></li> 
+      </ul>
 
       
       <ul class="sidebar-menu" data-widget="tree">

@@ -1,11 +1,11 @@
 @extends('layout.mainadmin')
 
 @section('titlepage')
-User
+Customer
 @endsection
 
 @section('subtitlepage')
-User Page
+Customer Page
 @endsection
 
 @section('konten')
@@ -15,7 +15,7 @@ User Page
       <!-- LINE CHART -->
       <div class="box box-warning ">
         <div class="box-header with-border">
-          <h3 class="box-title">User</h3>
+          <h3 class="box-title">Customer</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -31,7 +31,7 @@ User Page
               <div class="input-group">
                 <span class="input-group-btn">
                   
-                  <a href=" {{ route('user.create') }}" class="tombol btn btn-warning"> <i class="fa fa-plus"> </i> Add New</a>
+                  <a href=" #" class="tombol btn btn-warning"> <i class="fa fa-plus"> </i> Add New</a>
                 </span>
                
               </div><!-- /input-group -->
@@ -39,7 +39,7 @@ User Page
             <form action="" method="GET" role="search">  
             <div class="col-lg-6">
               <div class="input-group">
-                <input name="search" type="text" class="form-control" placeholder="Cari User">
+                <input name="search" type="text" class="form-control" placeholder="Cari Slider">
                 <span class="input-group-btn">
                
                   
@@ -58,26 +58,26 @@ User Page
           <table class="table table-bordered">   
             <thead>
             <tr>
-                <th>User Name</th>
-                <th>Email Address</th>
+                <th>Image</th>
+                <th>Link Slider</th>
                 <th>Action</th>
         
             </tr>
           </thead>
             <tbody>
-              @forelse ($user as $usr)
+              @forelse ($slider as $slid)
               <tr>
                 
 
-                  <td> {{ $usr->name }} </td>
+                  <td> a </td>
                   {{-- <td>{{ $prod->categories->name }}</td> --}}
-                  <td> {{ $usr->email }}</td>
+                  <td> a</td>
                
                   
                   
                   <td class="text-center">
-                      <form onsubmit="return confirm('Apakah Anda Yakin ?');" action=" {{ route('user.destroy',$usr->id) }}" method="POST">
-                          <a href=" {{ route('user.edit',$usr->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                      <form onsubmit="return confirm('Apakah Anda Yakin ?');" action=" " method="POST">
+                          <a href="" class="btn btn-sm btn-primary">EDIT</a>
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="btn btn-sm btn-danger">HAPUS</button> 
@@ -91,7 +91,7 @@ User Page
             @endforelse
           </tbody>
         </table>  
-        {{ $user->links() }}
+        {{ $customer->links() }}
        
 
         </div>

@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Invoices extends Model
+class Invoice extends Model
 {
     use HasFactory;
+
     protected $fillabe = [
         'invoice',
         'customer_id',
@@ -23,24 +24,21 @@ class Invoices extends Model
         'status',
         'grand_total',
         'snap_token',
-
+    	
     ];
 
     public function city()
     {       
-        return $this->belongsTo(Cities::class);
+        return $this->belongsTo(City::class);
     }
 
     public function province ()
     {
-        return $this->belongsTo(Provinces::class);
+        return $this->belongsTo(Province::class);
     }
 
     public function customer()
     {
-        return $this->belongsTo(Customers::class);
+        return $this->belongsTo(Customer::class);
     }
-
-
-
 }

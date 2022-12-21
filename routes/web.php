@@ -35,7 +35,8 @@ Route::resource('/admin/categories', \App\Http\Controllers\CategoriesController:
 Route::resource('/admin/product',\App\Http\Controllers\ProductController::class);
 Route::resource('/admin/slider',\App\Http\Controllers\SliderController::class);
 Route::resource('/admin/customer',\App\Http\Controllers\CustomerController::class);
-// Route::resource('/admin/user',\App\Http\Controllers\UserController::class);
+Route::resource('/admin/user',\App\Http\Controllers\UserController::class);
+Route::resource('/admin/invoices',\App\Http\Controllers\InvoiceController::class);
 
 
 
